@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f5f7">
+<meta name="description" content="Manikanta Imandi — Scrum Master, Delivery Lead and Agile practitioner.">
+<title>Manikanta Imandi — Agile Delivery & Product Thinking</title>
+<style>
+  :root { --bg:#f5f5f7; --ink:#1d1d1f; --muted:#6e6e73; --blue:#0071e3; --card:#fff; --line:rgba(0,0,0,.08); }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; scroll-padding-top:76px; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; letter-spacing:-.018em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--blue); text-decoration:none; } a:hover { text-decoration:underline; }
+  .nav { position:sticky; top:0; z-index:10; background:rgba(245,245,247,.82); backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line); }
+  .nav-inner { max-width:1080px; margin:auto; padding:0 24px; min-height:54px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+  .brand { font-size:15px; font-weight:650; color:var(--ink); letter-spacing:-.025em; }
+  .nav-links { display:flex; gap:23px; font-size:12px; } .nav-links a { color:#424245; }
+  .hero { max-width:1080px; margin:0 auto; padding:94px 24px 76px; text-align:center; }
+  .eyebrow { color:var(--muted); text-transform:uppercase; font-size:12px; font-weight:650; letter-spacing:.12em; }
+  h1 { font-size:clamp(48px,8vw,88px); line-height:.98; letter-spacing:-.075em; margin:20px 0 22px; font-weight:700; }
+  .hero p { max-width:720px; margin:0 auto; font-size:clamp(19px,2.4vw,26px); line-height:1.35; color:#515154; letter-spacing:-.035em; }
+  .hero-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin-top:30px; }
+  .button { display:inline-flex; align-items:center; justify-content:center; padding:12px 20px; border-radius:999px; background:var(--blue); color:white; font-size:15px; font-weight:550; transition:transform .18s,background .18s; }
+  .button:hover { background:#0077ed; text-decoration:none; transform:translateY(-1px); }
+  .button.secondary { color:var(--blue); background:transparent; border:1px solid rgba(0,113,227,.35); }
+  .section { max-width:1080px; margin:0 auto; padding:30px 24px 72px; }
+  .section-heading { text-align:center; margin-bottom:30px; }
+  h2 { font-size:clamp(32px,5vw,48px); letter-spacing:-.06em; line-height:1.05; margin:8px 0 12px; }
+  .section-heading p { color:var(--muted); font-size:18px; margin:0 auto; max-width:650px; line-height:1.5; }
+  .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+  .card { background:var(--card); border-radius:24px; padding:28px; box-shadow:0 2px 12px rgba(0,0,0,.025); }
+  .card .icon { font-size:27px; margin-bottom:18px; }
+  h3 { margin:0 0 10px; font-size:22px; letter-spacing:-.04em; }
+  .card p, .experience p, .education p { color:var(--muted); font-size:15px; line-height:1.65; margin:0; }
+  .pill-row { display:flex; flex-wrap:wrap; gap:9px; justify-content:center; margin-top:26px; }
+  .pill { border:1px solid #dedee3; border-radius:999px; padding:8px 12px; font-size:13px; color:#424245; background:rgba(255,255,255,.65); }
+  .timeline { max-width:820px; margin:0 auto; display:grid; gap:14px; }
+  .experience { background:#fff; border-radius:22px; padding:26px 28px; display:grid; grid-template-columns:190px 1fr; gap:26px; }
+  .date { color:var(--muted); font-size:13px; line-height:1.6; }
+  .company { color:var(--muted); font-size:14px; margin-bottom:5px; }
+  .role { font-size:21px; font-weight:650; letter-spacing:-.04em; margin-bottom:8px; }
+  .experience ul { margin:12px 0 0; padding-left:18px; color:#515154; font-size:14px; line-height:1.75; }
+  .feature { background:#1d1d1f; color:#f5f5f7; border-radius:30px; padding:48px; display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; }
+  .feature h2 { margin-top:0; } .feature p { color:#b9b9be; line-height:1.7; font-size:16px; }
+  .feature-list { display:grid; gap:12px; }
+  .feature-item { padding:16px 18px; border-radius:16px; background:rgba(255,255,255,.08); font-size:15px; }
+  .education { max-width:820px; margin:0 auto; background:white; border-radius:22px; padding:28px; display:flex; justify-content:space-between; gap:20px; align-items:center; }
+  .education .year { color:var(--muted); font-size:14px; white-space:nowrap; }
+  .contact { text-align:center; background:#fff; border-radius:30px; padding:58px 24px; }
+  .contact p { color:var(--muted); font-size:18px; line-height:1.6; max-width:600px; margin:0 auto 25px; }
+  footer { max-width:1080px; padding:25px 24px 40px; margin:auto; color:var(--muted); font-size:12px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  @media(max-width:760px) { .nav-inner { padding:0 18px; } .nav-links { gap:13px; font-size:11px; } .hero { padding:70px 20px 55px; } .section { padding:24px 18px 54px; } .grid { grid-template-columns:1fr; } .experience { grid-template-columns:1fr; gap:10px; padding:23px; } .feature { grid-template-columns:1fr; padding:30px 24px; gap:20px; } .education { align-items:flex-start; flex-direction:column; } }
+  @media(max-width:430px) { .nav-links { gap:10px; } .nav-links a:nth-child(2) { display:none; } .brand { font-size:13px; } h1 { font-size:49px; } }
+  @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; } }
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Manikanta Imandi</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#approach">Approach</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="eyebrow">Scrum Master · Delivery Lead · Agile Practitioner</div>
+    <h1>Helping teams<br>do their best work.</h1>
+    <p>I bring people, priorities and delivery together—building clarity, improving flow, and helping teams make meaningful progress.</p>
+    <div class="hero-actions">
+      <a class="button" href="#experience">Explore my experience</a>
+      <a class="button secondary" href="mailto:imanikanta3105@gmail.com">Get in touch</a>
+    </div>
+    <div class="pill-row">
+      <span class="pill">S&P Global Commodity Insights</span><span class="pill">SAFe & Scrum</span><span class="pill">Product thinking</span>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-heading">
+      <div class="eyebrow">A little about me</div>
+      <h2>Good delivery starts with clarity.</h2>
+      <p>I'm Manikanta, a Hyderabad-based Agile professional with experience across delivery leadership, Scrum facilitation and business analysis.</p>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="icon">◎</div><h3>Align people</h3><p>Facilitate planning, Scrum events and cross-team conversations so teams understand the goal, dependencies and next steps.</p></article>
+      <article class="card"><div class="icon">↗</div><h3>Improve delivery</h3><p>Use Agile metrics, transparent reporting and continuous improvement to make progress, risks and impediments visible.</p></article>
+      <article class="card"><div class="icon">◇</div><h3>Connect business & tech</h3><p>Bring a business-analysis mindset to requirements, problem solving and collaboration between business and technical teams.</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="section-heading">
+      <div class="eyebrow">Career journey</div>
+      <h2>Experience built around outcomes.</h2>
+      <p>From business analysis to leading Agile delivery, each role has strengthened my focus on collaboration, visibility and continuous improvement.</p>
+    </div>
+    <div class="timeline">
+      <article class="experience">
+        <div class="date">October 2023 – Present<br>Hyderabad, India</div>
+        <div><div class="company">S&P Global Commodity Insights</div><div class="role">Scrum Master / Delivery Lead</div><p>Supporting delivery through Agile facilitation, coordination and a focus on clear outcomes.</p><ul><li>Help teams align on priorities, delivery plans and dependencies.</li><li>Promote visibility into risks, blockers and progress.</li><li>Encourage collaboration and continuous improvement across delivery.</li></ul></div>
+      </article>
+      <article class="experience">
+        <div class="date">September 2022 – October 2023<br>Hyderabad, India</div>
+        <div><div class="company">HCL Technologies Ltd</div><div class="role">Senior Scrum Master</div><ul><li>Facilitated PI planning and Scrum of Scrums in a SAFe environment.</li><li>Managed product backlogs and supported monthly sprint releases.</li><li>Tracked Agile metrics, project budgets and team performance.</li><li>Created Jira reports and dashboards to improve stakeholder visibility.</li><li>Led status updates, stakeholder demos and progress reporting.</li></ul></div>
+      </article>
+      <article class="experience">
+        <div class="date">July 2021 – September 2022<br>Hyderabad, India</div>
+        <div><div class="company">Genpact</div><div class="role">Scrum Master</div><p>Supported Agile delivery and team collaboration. Detailed responsibilities were not specified in the supplied profile.</p></div>
+      </article>
+      <article class="experience">
+        <div class="date">January 2017 – July 2021<br>Hyderabad, India</div>
+        <div><div class="company">HSBC</div><div class="role">Business Analyst</div><ul><li>Analysed business needs and translated requirements into potential software solutions with technical teams.</li><li>Worked in Agile development to analyse and test business use cases.</li><li>Facilitated Scrum events, resolved blockers and tracked dependencies.</li><li>Supported conflict resolution and retrospective actions.</li></ul></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="approach">
+    <div class="feature">
+      <div>
+        <div class="eyebrow" style="color:#a1a1a6">How I work</div>
+        <h2>Structure where it helps.<br>Adaptability where it matters.</h2>
+        <p>I believe Agile works best when it creates shared understanding—not ceremony for its own sake. My focus is on surfacing risks early, enabling honest conversations, and helping teams learn and improve as they deliver.</p>
+      </div>
+      <div class="feature-list">
+        <div class="feature-item">01 &nbsp; Planning and cross-team alignment</div>
+        <div class="feature-item">02 &nbsp; Risk, impediment and dependency management</div>
+        <div class="feature-item">03 &nbsp; Metrics, dashboards and delivery transparency</div>
+        <div class="feature-item">04 &nbsp; Inspect & Adapt, system demos and learning</div>
+      </div>
+    </div>
+    <div class="pill-row" aria-label="Skills">
+      <span class="pill">SAFe</span><span class="pill">Scrum</span><span class="pill">Agile delivery</span><span class="pill">Backlog management</span><span class="pill">Stakeholder management</span><span class="pill">Jira dashboards</span><span class="pill">Salesforce Administration</span><span class="pill">Business analysis</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading"><div class="eyebrow">Education & credentials</div><h2>Learning that keeps moving.</h2></div>
+    <div class="education">
+      <div><h3>Bachelor of Technology (B.Tech)</h3><p>Chaitanya Engineering College</p></div>
+      <div class="year">April 2012 – June 2016</div>
+    </div>
+    <div class="pill-row">
+      <span class="pill">Certified Scrum Master (CSM)</span><span class="pill">SAFe 6 Product Owner / Product Manager</span><span class="pill">Salesforce Administrator</span>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="contact">
+      <div class="eyebrow">Let's connect</div>
+      <h2>Have a challenge to solve?</h2>
+      <p>I'm always happy to connect about Agile delivery, team collaboration, business analysis and product thinking.</p>
+      <div class="hero-actions">
+        <a class="button" href="mailto:imanikanta3105@gmail.com">Email me</a>
+        <a class="button secondary" href="https://www.linkedin.com/in/manikanta-imandi-548714262/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><span>© <span id="year"></span> Manikanta Imandi</span><span>Designed with simplicity in mind.</span></footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
